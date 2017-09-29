@@ -128,11 +128,15 @@ module.exports = function (grunt) {
     },
     //watch for changes
     watch: {
+      options: {
+        livereload: true
+      },
       grunt: { //what does this do?
-        options: {
-          livereload: true
-        },
-        files: ['Gruntfile.js']
+        files: ['gruntfile.js']
+      },
+      html: {
+        files: ['src/*.html'],
+        tasks: ['htmlmin'],
       },
       css: {
         files: ['src/css/sass/*.scss', 'src/css/sass/**/*.scss'],
